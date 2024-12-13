@@ -24,7 +24,10 @@ OpenAI ChatGPT API: Zanesljiva platforma za implementacijo in interakcijo z mode
 
 ## Open-AI Chat GPT
 
-# Text v govor TTS (Text to speech)
+# Faza 2: Vmesnik za API
+V tej fazi sem izdelal programsko kodo, ki se poveže preko API na LLM, dobi odgovor in ga prikaže.  Pri fazi 3 pa sem še dodelal program tako, da se poveže še na sentitizator govora in nam vrne govor v .mp3  formatu.
+
+# Faza 3: Text v govor TTS (Text to speech)
 
 TTS: Tehnologija pretvorbe besedila v govor
 
