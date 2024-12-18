@@ -6,7 +6,9 @@ Favoriti: Gradio(angleščina), WSL - za postaviitev LLM-a z veliko dela, finetu
 TTS: Govornik - zastonj slovenski API za sentitizacijo govora      Naraket - dobri, a plačljivi sintentizatorji govora za slovenščino
 Opis dela
 
-# Trenutni progress
+# Del projekta
+![image](https://github.com/user-attachments/assets/bdc94cd4-8b99-4545-812b-abe0f36014e5)
+
 
 ## Faza 1: Raziskava
 
@@ -23,12 +25,16 @@ OpenAI ChatGPT API: Zanesljiva platforma za implementacijo in interakcijo z mode
 ## Gpt4all
 Odlično orodje za izvajanje lokalnih LLM modelov. Omogoča hitro in enostavno implementacijo, veliko izbiro lokalnih LLM modelov, nativen suport za GPU in API vmesnik za povezvanje z drugimi aplikacijami.
 Link:https://www.nomic.ai/gpt4all
+![image](https://github.com/user-attachments/assets/f655d46e-3ca1-429b-af32-1e4ac6ffa47f)
+
 
 ## Open-AI Chat GPT
 Plačljiva verzija chat GPT, ki omogoča povezovanje preko API za prenos teksta, TTS, STT, finetuning gpt modelov in celo pogovor v živo. 
 
+
 # Faza 2: Vmesnik za API
 V tej fazi sem izdelal programsko kodo, ki se poveže preko API na LLM, dobi odgovor in ga prikaže.  Pri fazi 3 pa sem še dodelal program tako, da se poveže še na sentitizator govora in nam vrne govor v .mp3  formatu.
+![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
 
 # Faza 3: Text v govor TTS (Text to speech)
 
