@@ -40,6 +40,9 @@ Favoriti za slovensko TTS:
 Brezplačen slovenski API za sintetizacijo govora.
 Omogoča pretvorbo teksta v mp3 glasovni forma preko GET metode.
 Link: https://www.govornik.eu/govornik-api
+![image](https://github.com/user-attachments/assets/7541ab8d-5908-4a12-a2b3-2aa25145e1c0)
+
 ## Naraket: Kvalitetni, vendar plačljivi sintetizatorji govora za slovenščino.
 Za več izbire različnih glasov je možno uporabiti tudi druge sintentizatorje govora. Eden izmed njih je npr. narakeet:
-Link: https://www.narakeet.com/app/text-to-audio/?projectId=e8fc8d24-576f-4897-969c-f3ec8c9fe3e7
+Link: https://www.narakeet.com/languages/text-to-speech-slovenian/
+![image](https://github.com/user-attachments/assets/761679a7-b541-42f3-8e78-60324bcecb9e)
