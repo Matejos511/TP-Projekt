@@ -21,8 +21,11 @@ GPT4all: Odlična platforma za enostavno integracijo lokalnih LLM-ov.
 OpenAI ChatGPT API: Zanesljiva platforma za implementacijo in interakcijo z modeli GPT.
 # Favorita:
 ## Gpt4all
+Odlično orodje za izvajanje lokalnih LLM modelov. Omogoča hitro in enostavno implementacijo, veliko izbiro lokalnih LLM modelov, nativen suport za GPU in API vmesnik za povezvanje z drugimi aplikacijami.
+Link:https://www.nomic.ai/gpt4all
 
 ## Open-AI Chat GPT
+Plačljiva verzija chat GPT, ki omogoča povezovanje preko API za prenos teksta, TTS, STT, finetuning gpt modelov in celo pogovor v živo. 
 
 # Faza 2: Vmesnik za API
 V tej fazi sem izdelal programsko kodo, ki se poveže preko API na LLM, dobi odgovor in ga prikaže.  Pri fazi 3 pa sem še dodelal program tako, da se poveže še na sentitizator govora in nam vrne govor v .mp3  formatu.
@@ -33,6 +36,10 @@ TTS: Tehnologija pretvorbe besedila v govor
 
 Favoriti za slovensko TTS:
 
-## Govornik: Brezplačen slovenski API za sintetizacijo govora.
-
+## Slovenski sentitizator govora - Govornik
+Brezplačen slovenski API za sintetizacijo govora.
+Omogoča pretvorbo teksta v mp3 glasovni forma preko GET metode.
+Link: https://www.govornik.eu/govornik-api
 ## Naraket: Kvalitetni, vendar plačljivi sintetizatorji govora za slovenščino.
+Za več izbire različnih glasov je možno uporabiti tudi druge sintentizatorje govora. Eden izmed njih je npr. narakeet:
+Link: https://www.narakeet.com/app/text-to-audio/?projectId=e8fc8d24-576f-4897-969c-f3ec8c9fe3e7
