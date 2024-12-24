@@ -35,6 +35,11 @@ Plačljiva verzija chat GPT, ki omogoča povezovanje preko API za prenos teksta,
 
 # Faza 2: Vmesnik za API
 V tej fazi sem izdelal programsko kodo, ki se poveže preko API na LLM, dobi odgovor in ga prikaže.  Pri fazi 3 pa sem še dodelal program tako, da se poveže še na sentitizator govora in nam vrne govor v .mp3  formatu.
+Faza 2 je tudi najbolj obsežna, saj je potrebno veliko časa in dela, da program pravilno deluje in tudi tako kot hočemo.
+
+## 2.1 Izdelava programa, ki se poveže s OpenAI
+Prva stvar, ki jo je bilo potrebno urediti je bil nakup OpenAI in pregled API dokumentacije. API dokumentacija: https://platform.openai.com/docs/api-reference/introduction
+
 ![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
 
 # Faza 3: Text v govor TTS (Text to speech)
