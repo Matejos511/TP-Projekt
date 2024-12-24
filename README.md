@@ -1,12 +1,10 @@
+# PrešerenAI
+Cilj projekta je bil ustvariti chatbota, ki se pretvarja, da je France Prešeren in nam odgovarja na vprašanja. Za izvedbo je bilj cilj uporabiti LLM model in iz nejega pridobiti odgovore na razna vprašanja.
+Projekt sem razdelil v tri sklope. Prvi sklop je vseboval raziskave in testiranje različnih LLM modelov tako lokalnih, kot spletnih. Sledil je razvoj programa za povezavo preko API vmesnika in na koncu še dodelava tega APIja z TTS funkcionalnostjo.
 Tukaj je opis dela
-Trenutni progress: 
-Faza 1 research: cel kup AI orodji in API
-Favoriti: Gradio(angleščina), WSL - za postaviitev LLM-a z veliko dela, finetuning,   GPT4all - odlična platforma za enostavno aplikacijo lokalnih LLM-ov   OpenAI - chat GPT API platforma za zanesljivo 
 
-TTS: Govornik - zastonj slovenski API za sentitizacijo govora      Naraket - dobri, a plačljivi sintentizatorji govora za slovenščino
-Opis dela
 
-# Del projekta
+# Potek projekta
 ![image](https://github.com/user-attachments/assets/bdc94cd4-8b99-4545-812b-abe0f36014e5)
 
 
