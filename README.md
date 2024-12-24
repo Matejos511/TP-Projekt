@@ -52,3 +52,7 @@ Link: https://www.govornik.eu/govornik-api
 Za več izbire različnih glasov je možno uporabiti tudi druge sintentizatorje govora. Eden izmed njih je npr. narakeet:
 Link: https://www.narakeet.com/languages/text-to-speech-slovenian/
 ![image](https://github.com/user-attachments/assets/761679a7-b541-42f3-8e78-60324bcecb9e)
+
+# Končni Produkt
+Na koncu je nastala aplikacija, ki poveže chatGPT z sintentizatorjem govora Govornik.
+
