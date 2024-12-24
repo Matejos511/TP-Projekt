@@ -127,10 +127,7 @@ Ko dodamo uporabniški vmesnik program izgleda takole:
 ![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
 
 # Faza 3: Text v govor TTS (Text to speech)
-
-TTS: Tehnologija pretvorbe besedila v govor
-
-Favoriti za slovensko TTS:
+V zadni fazi sem dodal še TTS (Text To Speech). Podobno, kot pri izbiri LLM sem sem najprej poiskal, kaj že obstaja in kaj bi lahko uporabil. Odločal sem se med naslednjimi:
 
 ## Slovenski sentitizator govora - Govornik
 Brezplačen slovenski API za sintetizacijo govora.
@@ -143,6 +140,145 @@ Za več izbire različnih glasov je možno uporabiti tudi druge sintentizatorje 
 Link: https://www.narakeet.com/languages/text-to-speech-slovenian/
 ![image](https://github.com/user-attachments/assets/761679a7-b541-42f3-8e78-60324bcecb9e)
 
+## Izbira - Govornik
+Na koncu sem izbral Govornik, saj je brezplačen in omogoča relativno hitro implementacijo. Najprej sem izdelal program, ki se poveže z Govornikom in nam vrne MP3 zvočni zapis. 
+Več lahko izveste o Govorniku na tej povezavi: https://www.govornik.eu/govornik-api 
+```python
+import requests
+
+# Define the URL and parameters
+url = "https://s1.govornik.eu"
+params = {
+    "voice": "nik-unit",
+    "text": "Pozdravljen na ta prekrasen dan. Jaz ti bom povedal da sem ta Janez",
+    "source": "PresernAI",
+    "version": "1"
+}
+
+# Send the POST request
+response = requests.post(url, data=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Save the MP3 file
+    with open("output.mp3", "wb") as f:
+        f.write(response.content)
+    print("MP3 file has been saved as 'output.mp3'")
+else:
+    print(f"Failed to fetch MP3. Status code: {response.status_code}, Response: {response.text}")
+```
+Govornika sem na koncu še dodal v program in dodal gumb za predvajanje zvočnega posnetka.
+```python
+import tkinter as tk
+from tkinter import scrolledtext
+from openai import OpenAI
+import requests
+import os
+from playsound import playsound  # For playing the MP3 file
+import threading
+import pygame
+
+# Initialize the OpenAI client with your API key
+client = OpenAI(api_key="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")
+
+# Define the govornik API parameters
+govornik_url = "https://s1.govornik.eu"
+govornik_voice = "marko"
+govornik_source = "PresernAI"
+govornik_version = "3"
+
+# Function to handle sending user input to the OpenAI API
+def send_message():
+    user_input = input_box.get("1.0", tk.END).strip()
+    if not user_input:
+        return
+
+    # Display the user's input in the chat box
+    chat_box.insert(tk.END, "You: " + user_input + "\n")
+    
+    # Call OpenAI API
+    try:
+        completion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": "You are France Prešeren."},
+                {"role": "user", "content": user_input}
+            ]
+        )
+        # Use `.content` to access the response text
+        assistant_response = completion.choices[0].message.content
+    except Exception as e:
+        assistant_response = f"Error: {str(e)}"
+    
+    # Display the assistant's response in the chat box
+    chat_box.insert(tk.END, "Assistant: " + assistant_response + "\n")
+    
+    # Call govornik API to generate speech
+    try:
+        govornik_params = {
+            "voice": govornik_voice,
+            "text": assistant_response,
+            "source": govornik_source,
+            "version": govornik_version
+        }
+        response = requests.post(govornik_url, data=govornik_params)
+        if response.status_code == 200:
+            # Save the MP3 file
+            mp3_file = "output.mp3"
+            with open(mp3_file, "wb") as f:
+                f.write(response.content)
+            print(f"MP3 file saved as '{mp3_file}'")
+            
+            # Play the generated MP3 file
+            playsound(mp3_file)
+        else:
+            print(f"Failed to fetch MP3. Status code: {response.status_code}, Response: {response.text}")
+    except Exception as e:
+        print(f"Error while generating speech: {e}")
+    
+    # Clear the input box
+    input_box.delete("1.0", tk.END)
+
+mp3_file = "output.mp3"
+# Function to play the generated audio
+def play_audio():
+    if os.path.exists(mp3_file):
+        try:
+            pygame.mixer.init()
+            pygame.mixer.music.load(mp3_file)
+            pygame.mixer.music.play()
+        except Exception as e:
+            chat_box.insert(tk.END, f"Assistant: Error playing audio: {e}\n")
+    else:
+        chat_box.insert(tk.END, "Assistant: No audio file found. Please generate speech first.\n")
+
+
+# Create the main application window
+app = tk.Tk()
+app.title("Chat with France Prešeren")
+
+# Create a chat box to display the conversation
+chat_box = scrolledtext.ScrolledText(app, wrap=tk.WORD, width=60, height=20, state="normal")
+chat_box.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
+
+# Create an input box for the user to type their message
+input_box = tk.Text(app, wrap=tk.WORD, width=50, height=5)
+input_box.grid(row=1, column=0, padx=10, pady=10)
+
+# Create a "Send" button
+send_button = tk.Button(app, text="Send", command=send_message, width=10)
+send_button.grid(row=1, column=1, padx=10, pady=10)
+
+# "Play" button to play the audio
+play_button = tk.Button(app, text="Play", command=play_audio, width=10)
+play_button.grid(row=1, column=2, padx=10, pady=10)
+
+# Run the application
+app.mainloop()
+
+
+```
 # Končni Projekt
-Na koncu je nastala aplikacija, ki poveže chatGPT z sintentizatorjem govora Govornik.
+Na koncu je nastala aplikacija, ki poveže chatGPT z sintentizatorjem govora Govornik. Ko vpišemo nek tekst ga program pošlje ChatGPTju, ki nam vrne odgovor. Odgovor se izpiše in pošlje Govorniku, ki nam vrne mp3 zvočni posnetek. Ta posnetek pa si nato lahko predvajamo.
+
 
