@@ -122,6 +122,7 @@ send_button.grid(row=1, column=1, padx=10, pady=10)
 # Run the application
 app.mainloop()
 ```
+Ko dodamo uporabniški vmesnik program izgleda takole:
 
 ![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
 
