@@ -40,6 +40,26 @@ Faza 2 je tudi najbolj obsežna, saj je potrebno veliko časa in dela, da progra
 ## 2.1 Izdelava programa, ki se poveže s OpenAI
 Prva stvar, ki jo je bilo potrebno urediti je bil nakup OpenAI in pregled API dokumentacije. API dokumentacija: https://platform.openai.com/docs/api-reference/introduction
 
+```python
+from openai import OpenAI
+client = OpenAI(api_key="API_kljuc")
+
+completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are France Prešeren."},
+        {
+            "role": "user",
+            "content": "Kdo si pa ti?."
+        }
+    ]
+)
+
+print(completion.choices[0].message)
+
+
+```
+
 ![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
 
 # Faza 3: Text v govor TTS (Text to speech)
