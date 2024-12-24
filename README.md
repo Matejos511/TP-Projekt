@@ -6,7 +6,7 @@ Projekt sem razdelil v tri sklope. Prvi sklop je vseboval raziskave in testiranj
 
 # Potek projekta
 Poleg projekta je ideja še nakoliko većja, saj je v načrtu izvedba hologramske osebe, s katero se bo možno pogovarjati. Na spodnji sliki lahko vidite načrt, kako bo zadeva izgledala. V jedru bo program, ki se bo lahko povezal z različnimi online ali lokalnimi aplikacijami preko API povezave in izmenjeval podatke med njimi. Najprej bo program zajel naš govor in ga predelal v tekst preko STT. Sledil bo LLM model, ki nam bo generiral odgovor. Odgovor se bo poslal na TTS in se shranil v mp3 datoteko.   Sledila bo še generacija videa osebnosti, ki bo odpirala usta in se premikala glede na prejet posnetek. Na koncu se bo celotna zadeva predvajala v načinu za hologramski video in se pred nami prikazala kot hologram. 
-Zaradi časovne omejenosti in zahtevnosti tega projekta se bom omejil le na prevokotnik, ki ga lahko jasno vidite na sliki. Torej izdelal bom aplikacijo, ki komunicira z LLM modelom in nato še TTS preko API in ju tako povežeskupaj v eno.  
+Zaradi časovne omejenosti in zahtevnosti tega projekta se bom omejil le na prevokotnik, ki ga lahko jasno vidite na sliki. Torej izdelal bom aplikacijo, ki komunicira z LLM modelom in nato še TTS preko API in ju tako poveže skupaj v eno.  
 ![image](https://github.com/user-attachments/assets/bdc94cd4-8b99-4545-812b-abe0f36014e5)
 
 
