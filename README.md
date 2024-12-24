@@ -21,6 +21,7 @@ WSL: Uporabljeno za postavitev lokalnih jezikovnih modelov (LLM), še posebej up
 GPT4all: Odlična platforma za enostavno integracijo lokalnih LLM-ov.
 
 OpenAI ChatGPT API: Zanesljiva platforma za implementacijo in interakcijo z modeli GPT.
+Odločil sem se za chatGPT od Open AI, saj nam ponuje najboljše odgovore na zastavljena vprašanja in dogovarja v lepi slovenščini.
 # Favorita:
 ## Gpt4all
 Odlično orodje za izvajanje lokalnih LLM modelov. Omogoča hitro in enostavno implementacijo, veliko izbiro lokalnih LLM modelov, nativen suport za GPU in API vmesnik za povezvanje z drugimi aplikacijami.
