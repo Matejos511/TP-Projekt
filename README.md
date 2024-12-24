@@ -1,7 +1,7 @@
 # PrešerenAI
 Cilj projekta je bil ustvariti chatbota, ki se pretvarja, da je France Prešeren in nam odgovarja na vprašanja. Za izvedbo je bilj cilj uporabiti LLM model in iz nejega pridobiti odgovore na razna vprašanja.
 Projekt sem razdelil v tri sklope. Prvi sklop je vseboval raziskave in testiranje različnih LLM modelov tako lokalnih, kot spletnih. Sledil je razvoj programa za povezavo preko API vmesnika in na koncu še dodelava tega APIja z TTS funkcionalnostjo.
-Tukaj je opis dela
+
 
 
 # Potek projekta
