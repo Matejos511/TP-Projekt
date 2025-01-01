@@ -1,11 +1,11 @@
 # PrešerenAI
-Cilj projekta je bil ustvariti chatbota, ki se pretvarja, da je France Prešeren in nam odgovarja na vprašanja. Za izvedbo je bilj cilj uporabiti LLM model in iz nejega pridobiti odgovore na razna vprašanja.
-Projekt sem razdelil v tri sklope. Prvi sklop je vseboval raziskave in testiranje različnih LLM modelov tako lokalnih, kot spletnih. Sledil je razvoj programa za povezavo preko API vmesnika in na koncu še dodelava tega APIja z TTS funkcionalnostjo.
+Cilj projekta je bil ustvariti chatbota, ki se pretvarja, da je France Prešeren in nam odgovarja na vprašanja. Za izvedbo je bil cilj uporabiti LLM model in iz njega pridobiti odgovore na razna vprašanja.
+Projekt sem razdelil v tri sklope. Prvi sklop je vseboval raziskave in testiranje različnih LLM modelov, tako lokalnih kot spletnih. Sledil je razvoj programa za povezavo preko API vmesnika in na koncu še dodelava tega APIja z TTS funkcionalnostjo.
 
 
 
 # Potek projekta
-Poleg projekta je ideja še nakoliko većja, saj je v načrtu izvedba hologramske osebe, s katero se bo možno pogovarjati. Na spodnji sliki lahko vidite načrt, kako bo zadeva izgledala. V jedru bo program, ki se bo lahko povezal z različnimi online ali lokalnimi aplikacijami preko API povezave in izmenjeval podatke med njimi. Najprej bo program zajel naš govor in ga predelal v tekst preko STT. Sledil bo LLM model, ki nam bo generiral odgovor. Odgovor se bo poslal na TTS in se shranil v mp3 datoteko.   Sledila bo še generacija videa osebnosti, ki bo odpirala usta in se premikala glede na prejet posnetek. Na koncu se bo celotna zadeva predvajala v načinu za hologramski video in se pred nami prikazala kot hologram. 
+Poleg projekta je ideja še nakoliko večja, saj je v načrtu izvedba hologramske osebe, s katero se bo možno pogovarjati. Na spodnji sliki lahko vidite načrt, kako bo zadeva izgledala. V jedru bo program, ki se bo lahko povezal z različnimi online ali lokalnimi aplikacijami preko API povezave in izmenjeval podatke med njimi. Najprej bo program zajel naš govor in ga predelal v tekst preko STT. Sledil bo LLM model, ki nam bo generiral odgovor. Odgovor se bo poslal na TTS in se shranil v mp3 datoteko.   Sledila bo še generacija videa osebnosti, ki bo odpirala usta in se premikala glede na prejet posnetek. Na koncu se bo celotna zadeva predvajala v načinu za hologramski video in se pred nami prikazala kot hologram. 
 Zaradi časovne omejenosti in zahtevnosti tega projekta se bom omejil le na prevokotnik, ki ga lahko jasno vidite na sliki. Torej izdelal bom aplikacijo, ki komunicira z LLM modelom in nato še TTS preko API in ju tako poveže skupaj v eno.  
 ![image](https://github.com/user-attachments/assets/bdc94cd4-8b99-4545-812b-abe0f36014e5)
 
@@ -21,16 +21,16 @@ WSL: Uporabljeno za postavitev lokalnih jezikovnih modelov (LLM), še posebej up
 GPT4all: Odlična platforma za enostavno integracijo lokalnih LLM-ov.
 
 OpenAI ChatGPT API: Zanesljiva platforma za implementacijo in interakcijo z modeli GPT.
-Odločil sem se za chatGPT od Open AI, saj nam ponuje najboljše odgovore na zastavljena vprašanja in dogovarja v lepi slovenščini.
+Odločil sem se za ChatGPT od Open AI, saj nam ponuje najboljše odgovore na zastavljena vprašanja in odgovarja v lepi slovenščini.
 # Favorita:
 ## Gpt4all
-Odlično orodje za izvajanje lokalnih LLM modelov. Omogoča hitro in enostavno implementacijo, veliko izbiro lokalnih LLM modelov, nativen suport za GPU in API vmesnik za povezvanje z drugimi aplikacijami.
+Odlično orodje za izvajanje lokalnih LLM modelov. Omogoča hitro in enostavno implementacijo, veliko izbiro lokalnih LLM modelov, nativen support za GPU in API vmesnik za povezovanje z drugimi aplikacijami.
 Link:https://www.nomic.ai/gpt4all
 ![image](https://github.com/user-attachments/assets/f655d46e-3ca1-429b-af32-1e4ac6ffa47f)
 
 
 ## Open-AI Chat GPT
-Plačljiva verzija chat GPT, ki omogoča povezovanje preko API za prenos teksta, TTS, STT, finetuning gpt modelov in celo pogovor v živo. 
+Plačljiva verzija ChatGPT, ki omogoča povezovanje preko API za prenos teksta, TTS, STT, finetuning gpt modelov in celo pogovor v živo. 
 
 
 # Faza 2: Vmesnik za API
@@ -39,7 +39,7 @@ Faza 2 je tudi najbolj obsežna, saj je potrebno veliko časa in dela, da progra
 
 ## 2.1 Izdelava programa, ki se poveže s OpenAI
 Prva stvar, ki jo je bilo potrebno urediti je bil nakup OpenAI in pregled API dokumentacije. API dokumentacija: https://platform.openai.com/docs/api-reference/introduction
-Za delovanje te kodeje potrebno namestiti knjižnico:
+Za delovanje te kode je potrebno namestiti knjižnico:
 
 ```python
 pip install openai
@@ -127,15 +127,15 @@ Ko dodamo uporabniški vmesnik program izgleda takole:
 ![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
 
 # Faza 3: Text v govor TTS (Text to speech)
-V zadni fazi sem dodal še TTS (Text To Speech). Podobno, kot pri izbiri LLM sem sem najprej poiskal, kaj že obstaja in kaj bi lahko uporabil. Odločal sem se med naslednjimi:
+V zadnji fazi sem dodal še TTS (Text To Speech). Podobno, kot pri izbiri LLM sem sem najprej poiskal, kaj že obstaja in kaj bi lahko uporabil. Odločal sem se med naslednjimi:
 
-## Slovenski sentitizator govora - Govornik
+## Slovenski sintetizator govora - Govornik
 Brezplačen slovenski API za sintetizacijo govora.
 Omogoča pretvorbo teksta v mp3 glasovni forma preko GET metode.
 Link: https://www.govornik.eu/govornik-api
 ![image](https://github.com/user-attachments/assets/7541ab8d-5908-4a12-a2b3-2aa25145e1c0)
 
-## Naraket: Kvalitetni, vendar plačljivi sintetizatorji govora za slovenščino.
+## Naraket: Kvalitetni, vendar plačljivi sintetizatorji govora za slovenščino
 Za več izbire različnih glasov je možno uporabiti tudi druge sintentizatorje govora. Eden izmed njih je npr. narakeet:
 Link: https://www.narakeet.com/languages/text-to-speech-slovenian/
 ![image](https://github.com/user-attachments/assets/761679a7-b541-42f3-8e78-60324bcecb9e)
@@ -279,6 +279,6 @@ app.mainloop()
 
 ```
 # Končni Projekt
-Na koncu je nastala aplikacija, ki poveže chatGPT z sintentizatorjem govora Govornik. Ko vpišemo nek tekst ga program pošlje ChatGPTju, ki nam vrne odgovor. Odgovor se izpiše in pošlje Govorniku, ki nam vrne mp3 zvočni posnetek. Ta posnetek pa si nato lahko predvajamo.
+Na koncu je nastala aplikacija, ki poveže ChatGPT z sintetizatorjem govora Govornik. Ko vpišemo nek tekst ga program pošlje ChatGPTju, ki nam vrne odgovor. Odgovor se izpiše in pošlje Govorniku, ki nam vrne mp3 zvočni posnetek. Ta posnetek pa si nato lahko predvajamo.
 
 
