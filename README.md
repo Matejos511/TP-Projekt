@@ -33,6 +33,9 @@ Link:https://www.nomic.ai/gpt4all
 ## Open-AI Chat GPT
 Plačljiva verzija ChatGPT, ki omogoča povezovanje preko API za prenos teksta, TTS, STT, finetuning gpt modelov in celo pogovor v živo. 
 
+![image](https://github.com/user-attachments/assets/2cfc17e5-dcd4-4a69-8766-87a4328de7e5)
+
+
 
 # Faza 2: Vmesnik za API
 V tej fazi sem izdelal programsko kodo, ki se poveže preko API na LLM, dobi odgovor in ga prikaže.  Pri fazi 3 pa sem še dodelal program tako, da se poveže še na sentitizator govora in nam vrne govor v .mp3  formatu.
@@ -171,7 +174,9 @@ if response.status_code == 200:
 else:
     print(f"Failed to fetch MP3. Status code: {response.status_code}, Response: {response.text}")
 ```
-Govornika sem na koncu še dodal v program in dodal gumb za predvajanje zvočnega posnetka.
+Govornika sem na koncu še dodal v program in dodal gumb za predvajanje zvočnega posnetka. Pri izvajanju zadnjega programa so potrebene tudi določene knjižnice. Od tega dve, ki sem ju omenil žena začetku in 3 nove.
+
+
 ```python
 import tkinter as tk
 from tkinter import scrolledtext
