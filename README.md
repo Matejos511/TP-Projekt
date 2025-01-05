@@ -71,20 +71,23 @@ import tkinter as tk
 from tkinter import scrolledtext
 from openai import OpenAI
 
-# Initialize the OpenAI client with your API key
+import tkinter as tk
+from tkinter import scrolledtext
+from openai import OpenAI
+
+# Inicializirajte OpenAI odjemalca z vašim API ključem
 client = OpenAI(api_key="API_kljuc")
 
-# Function to handle sending user input to the OpenAI API
+# Funkcija za pošiljanje uporabniškega vnosa na OpenAI API
 def send_message():
     user_input = input_box.get("1.0", tk.END).strip()
     if not user_input:
         return
 
+    # Prikaz uporabniškega vnosa v pogovornem oknu
+    chat_box.insert(tk.END, "Vi: " + user_input + "\n")
     
-    # Display the user's input in the chat box
-    chat_box.insert(tk.END, "You: " + user_input + "\n")
-    
-    # Call OpenAI API
+    # Klic OpenAI API
     try:
         completion = client.chat.completions.create(
             model="gpt-4o",
@@ -93,34 +96,34 @@ def send_message():
                 {"role": "user", "content": user_input}
             ]
         )
-        # Use `.content` to access the response text
+        # Uporabite `.content` za dostop do besedila odgovora
         assistant_response = completion.choices[0].message.content
     except Exception as e:
-        assistant_response = f"Error: {str(e)}"
+        assistant_response = f"Napaka: {str(e)}"
     
-    # Display the assistant's response in the chat box
-    chat_box.insert(tk.END, "Preseren: " + assistant_response + "\n")
+    # Prikaz odgovora asistenta v pogovornem oknu
+    chat_box.insert(tk.END, "Prešeren: " + assistant_response + "\n")
     
-    # Clear the input box
+    # Počistite vnosno polje
     input_box.delete("1.0", tk.END)
 
-# Create the main application window
+# Ustvarite glavno okno aplikacije
 app = tk.Tk()
 app.title("Pogovor z Francetom Prešerenom")
 
-# Create a chat box to display the conversation
+# Ustvarite pogovorno okno za prikaz pogovora
 chat_box = scrolledtext.ScrolledText(app, wrap=tk.WORD, width=60, height=20, state="normal")
 chat_box.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
 
-# Create an input box for the user to type their message
+# Ustvarite vnosno polje za uporabnika, da vpiše svoje sporočilo
 input_box = tk.Text(app, wrap=tk.WORD, width=50, height=5)
 input_box.grid(row=1, column=0, padx=10, pady=10)
 
-# Create a "Send" button
-send_button = tk.Button(app, text="Send", command=send_message, width=10)
+# Ustvarite gumb "Pošlji"
+send_button = tk.Button(app, text="Pošlji", command=send_message, width=10)
 send_button.grid(row=1, column=1, padx=10, pady=10)
 
-# Run the application
+# Zaženite aplikacijo
 app.mainloop()
 ```
 Ko dodamo uporabniški vmesnik program izgleda takole:
