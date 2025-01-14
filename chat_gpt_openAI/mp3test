@@ -1,0 +1,5 @@
+import pygame
+
+pygame.mixer.init()
+pygame.mixer.music.load("test.mp3")  # Replace with a valid MP3 file path
+pygame.mixer.music.play()
