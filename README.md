@@ -136,7 +136,7 @@ app.mainloop()
 ```
 Ko dodamo uporabniški vmesnik program izgleda takole:
 
-![image](slike/Uporabniski_vmesnik.png)
+![image](slike/Uporabniški_vmesnik.png)
 
 # Faza 3: Text v govor TTS (Text to speech)
 V zadnji fazi sem dodal še TTS (Text To Speech). Podobno, kot pri izbiri LLM sem sem najprej poiskal, kaj že obstaja in kaj bi lahko uporabil. Odločal sem se med naslednjimi:
