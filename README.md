@@ -4,7 +4,8 @@ Cilj projekta je bil ustvariti chatbota, ki se pretvarja, da je France Prešeren
 Poleg projekta je ideja še nekoliko večja, saj je v načrtu izvedba hologramske osebe, s katero se bo možno pogovarjati. Na spodnji sliki lahko vidite načrt, kako bo zadeva izgledala. V jedru bo program, ki se bo lahko povezal z različnimi spletnimi ali lokalnimi aplikacijami preko API povezave in izmenjeval podatke med njimi. Najprej bo program zajel naš govor in ga predelal v tekst preko STT. Sledil bo LLM model, ki nam bo generiral odgovor. Odgovor se bo poslal na TTS in se shranil v mp3 datoteko. Sledila bo generacija videa osebnosti, ki bo odpirala usta in se premikala glede na prejet posnetek. Na koncu se bo celotna zadeva predvajala v načinu za hologramski video in se pred nami prikazala kot hologram. 
 Zaradi časovne omejenosti in zahtevnosti tega projekta se bom omejil le na pravokotnik, ki ga lahko jasno vidite na sliki. Torej izdelal bom aplikacijo, ki komunicira z LLM in TTS preko API in ju tako poveže skupaj v eno.  
 
-![image](https://github.com/user-attachments/assets/bdc94cd4-8b99-4545-812b-abe0f36014e5)
+
+![image](slike/UML_diagram.png)
 
 # Potek projekta
 Projekt sem razdelil v tri sklope. Prvi sklop vsebuje raziskave in testiranje različnih LLM modelov, tako lokalnih kot spletnih. Sledi razvoj programa za povezavo preko API vmesnika in na koncu še dodelava tega API-ja z TTS (text to speech) funkcionalnostjo. 
@@ -28,13 +29,15 @@ V tej fazi sem raziskal različna AI orodja in API-je, da bi našel najboljše r
 ## Gpt4all
 Odlično orodje za izvajanje lokalnih LLM modelov. Omogoča hitro in enostavno implementacijo, veliko izbiro lokalnih LLM modelov, nativen support za GPU in API vmesnik za povezovanje z drugimi aplikacijami.
 Povezava do GPT4All: https://www.nomic.ai/gpt4all
-![image](https://github.com/user-attachments/assets/f655d46e-3ca1-429b-af32-1e4ac6ffa47f)
+
+![image](slike/Gpt4All.png)
 
 
 ## Open-AI Chat GPT
 Plačljiva verzija ChatGPT, ki omogoča povezovanje preko API za prenos teksta, TTS, STT, finetuning gpt modelov in celo pogovor v živo. 
 
-![image](https://github.com/user-attachments/assets/2cfc17e5-dcd4-4a69-8766-87a4328de7e5)
+
+![image](slike/OpenAI.png)
 
 Odločil sem se za ChatGPT od Open AI, saj nam ponuje najboljše odgovore na zastavljena vprašanja in odgovarja v lepi slovenščini.
 
@@ -133,7 +136,7 @@ app.mainloop()
 ```
 Ko dodamo uporabniški vmesnik program izgleda takole:
 
-![image](https://github.com/user-attachments/assets/53b86ddf-bda9-42ca-b96d-091f57ffd606)
+![image](slike/Uporabniski_vmesnik.png)
 
 # Faza 3: Text v govor TTS (Text to speech)
 V zadnji fazi sem dodal še TTS (Text To Speech). Podobno, kot pri izbiri LLM sem sem najprej poiskal, kaj že obstaja in kaj bi lahko uporabil. Odločal sem se med naslednjimi:
@@ -142,12 +145,14 @@ V zadnji fazi sem dodal še TTS (Text To Speech). Podobno, kot pri izbiri LLM se
 Brezplačen slovenski API za sintetizacijo govora.
 Omogoča pretvorbo teksta v mp3 glasovni forma preko GET metode.
 <br> Link: https://www.govornik.eu/govornik-api </br>
-![image](https://github.com/user-attachments/assets/7541ab8d-5908-4a12-a2b3-2aa25145e1c0)
+
+![image](slike/Govornik.png)
 
 ## Naraket: Kvalitetni, vendar plačljivi sintetizatorji govora za slovenščino
 Za več izbire različnih glasov je možno uporabiti tudi druge sintentizatorje govora. Eden izmed njih je npr. narakeet:
 <br> Link: https://www.narakeet.com/languages/text-to-speech-slovenian/ </br>
-![image](https://github.com/user-attachments/assets/761679a7-b541-42f3-8e78-60324bcecb9e)
+
+![image](slike/TTS_Narakeet.png)
 
 ## Izbira - Govornik
 Na koncu sem izbral Govornik, saj je brezplačen in omogoča relativno hitro implementacijo. Najprej sem izdelal program, ki se poveže z Govornikom in nam vrne MP3 zvočni zapis. 
@@ -304,6 +309,7 @@ app.mainloop()
 
 Nastala je aplikacija, ki poveže ChatGPT z sintetizatorjem govora Govornik. Ko vpišemo nek tekst ga program pošlje ChatGPTju, ki nam vrne odgovor. Odgovor se izpiše in pošlje Govorniku, ki nam vrne mp3 zvočni posnetek. Ta posnetek pa si nato lahko predvajamo preko tipke predvajaj. Posnetek se nam odpre v privzetem predvajalniku na windowsu.
 Za vnos besedil uporabimo spodnji okvir in vanj vnesemo vprašanje. Po kratkem času dobimo odgovor in si lahko predvajamo posnetek.
-![image](https://github.com/user-attachments/assets/1357c945-a20c-45e8-a4e8-fc1b5d88834e)
+
+![image](slike/Rezultat_projekta.png)
 
 
