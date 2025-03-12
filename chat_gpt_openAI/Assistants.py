@@ -1,5 +1,5 @@
 
-# client = Client(api_key="ysk-proj-ZpzsJSiKJOXUYj3GPd8qXUzsjf76LsWfakDlmAfkTaeEq-JK4POV0PQYwEpOX430KE8O6g1jA8T3BlbkFJPyIGLVEnNUxY6R5VMO77YhaOsAz2oRn_XW7jeRHWuxwKOVE9MBONcQVIU4VJSlvoi9WkUpyQYA") 
+# client = Client(api_key="CLIENT_ID") 
 
 
 
@@ -12,7 +12,7 @@ from playsound import playsound
 import threading
 
 # OpenAI API Key
-openai.api_key = "ysk-proj-ZpzsJSiKJOXUYj3GPd8qXUzsjf76LsWfakDlmAfkTaeEq-JK4POV0PQYwEpOX430KE8O6g1jA8T3BlbkFJPyIGLVEnNUxY6R5VMO77YhaOsAz2oRn_XW7jeRHWuxwKOVE9MBONcQVIU4VJSlvoi9WkUpyQYA"
+openai.api_key = "APIKLJUC"
 
 # Govornik API Configuration
 govornik_url = "https://s1.govornik.eu"
