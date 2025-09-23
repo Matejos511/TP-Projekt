@@ -312,4 +312,6 @@ Za vnos besedil uporabimo spodnji okvir in vanj vnesemo vpraÅ¡anje. Po kratkem Ä
 
 ![image](slike/Rezultat_projekta.png)
 
+Nadeljevanje projekta je sledilo v diplomski nalogi. 
+
 
